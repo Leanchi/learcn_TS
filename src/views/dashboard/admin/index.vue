@@ -70,6 +70,10 @@
         <box-card />
       </el-col>
     </el-row>
+    <el-input
+      v-model="testString"
+      type="textarea"
+    />
   </div>
 </template>
 
@@ -123,8 +127,19 @@ const lineChartData: { [type: string]: ILineChartData } = {
 export default class extends Vue {
   private lineChartData = lineChartData.newVisitis
 
+  private age = 18
+  private testString: String = `test
+  \\n and $
+  ${this.age}`
+
   private handleSetLineChartData(type: string) {
     this.lineChartData = lineChartData[type]
+  }
+
+  mounted() {
+    let num: any = 4
+
+    console.log(num.ifItExists())
   }
 }
 </script>
